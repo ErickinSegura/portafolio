@@ -1,0 +1,102 @@
+.starry-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+}
+
+.animated-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150vmax;
+    height: 150vmax;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+
+    background: radial-gradient(circle,
+    #000122 5%,
+    #000016 30%,
+    #000000 80%
+    );
+
+    background-size: 200% 200%;
+
+    animation:
+            rotateBackground 1200s linear infinite,
+            pulse 15s ease-in-out infinite,
+            gradientAnimation 40s;
+}
+
+.animated-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at top,
+    rgba(100, 50, 200, 0.05) 10%,
+    rgba(0, 0, 0, 0) 50%
+    );
+    z-index: 1;
+    pointer-events: none;
+    animation: gradientOverlayAnimation 20s ease infinite;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes rotateBackground {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .animated-background {
+        width: 180vmax;
+        height: 180vmax;
+    }
+}
