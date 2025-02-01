@@ -4,33 +4,43 @@ import Constellations from "./Constellations";
 
 const StarryBackground = () => {
     const starCount = 150;
+    const maxRadius = 100;
 
-    const stars = Array.from({ length: starCount }).map(() => ({
-        left: Math.random() * 100,          // posición horizontal en %
-        top: Math.random() * 100,           // posición vertical en %
-        size: Math.random() * 2 + 1,        // tamaño entre 1 y 3px
-        twinkleDelay: Math.random() * 2     // retraso aleatorio entre 0 y 2 segundos
-    }));
+    const stars = Array.from({ length: starCount }).map(() => {
+        const angle = Math.random() * 2 * Math.PI;
+        const radius = Math.sqrt(Math.random()) * maxRadius;
+        const left = 50 + radius * Math.cos(angle);
+        const top = 50 + radius * Math.sin(angle);
+        return {
+            left,
+            top,
+            size: Math.random() * 2 + 1,
+            twinkleDelay: Math.random() * 2
+        };
+    });
 
     return (
         <div className="starry-wrapper">
             <div className="animated-background" />
 
-            {stars.map((star, index) => (
-                <div
-                    key={index}
-                    className="star"
-                    style={{
-                        left: `${star.left}%`,
-                        top: `${star.top}%`,
-                        width: `${star.size}px`,
-                        height: `${star.size}px`,
-                        animationDelay: `${star.twinkleDelay}s`
-                    }}
-                />
-            ))}
+            {/* Contenedor de estrellas con rotación */}
+            <div className="stars-container">
+                {stars.map((star, index) => (
+                    <div
+                        key={index}
+                        className="star"
+                        style={{
+                            left: `${star.left}%`,
+                            top: `${star.top}%`,
+                            width: `${star.size}px`,
+                            height: `${star.size}px`,
+                            animationDelay: `${star.twinkleDelay}s`
+                        }}
+                    />
+                ))}
 
-            <Constellations />
+                <Constellations />
+            </div>
         </div>
     );
 };
