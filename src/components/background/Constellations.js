@@ -2,7 +2,8 @@ import React, { useState, useMemo } from 'react';
 import './Constellations.css';
 
 const Constellations = () => {
-    const constellationData = [
+    // Memoriza los datos de las constelaciones para evitar que se vuelvan a crear en cada render.
+    const constellationData = useMemo(() => [
         {
             id: 1,
             image: 'logo192.png',
@@ -23,7 +24,7 @@ const Constellations = () => {
                 { left: 75, top: 30 }
             ]
         },
-    ];
+    ], []);
 
     return (
         <div className="constellations-container">
@@ -34,20 +35,28 @@ const Constellations = () => {
     );
 };
 
-const Constellation = ({ data }) => {
+// Envolvemos el componente en React.memo para evitar renders innecesarios.
+const Constellation = React.memo(({ data }) => {
     const [hover, setHover] = useState(false);
     const stars = data.stars;
 
+    // Se calcula la rotación una sola vez.
     const rotation = useMemo(() => Math.random() * 30 - 15, []);
 
-    const lefts = stars.map(star => star.left);
-    const tops = stars.map(star => star.top);
-    const minLeft = Math.min(...lefts);
-    const maxLeft = Math.max(...lefts);
-    const minTop = Math.min(...tops);
-    const maxTop = Math.max(...tops);
+    // Calcula y memoriza el bounding box de la constelación.
+    const { minLeft, maxLeft, minTop, maxTop } = useMemo(() => {
+        const lefts = stars.map(star => star.left);
+        const tops = stars.map(star => star.top);
+        return {
+            minLeft: Math.min(...lefts),
+            maxLeft: Math.max(...lefts),
+            minTop: Math.min(...tops),
+            maxTop: Math.max(...tops)
+        };
+    }, [stars]);
 
-    const containerStyle = {
+    // Memoriza el estilo del contenedor.
+    const containerStyle = useMemo(() => ({
         position: 'absolute',
         left: `${minLeft}%`,
         top: `${minTop}%`,
@@ -55,16 +64,20 @@ const Constellation = ({ data }) => {
         height: `${maxTop - minTop}%`,
         transform: `rotate(${rotation}deg)`,
         transition: 'transform 0.3s'
-    };
+    }), [minLeft, minTop, maxLeft, maxTop, rotation]);
 
-    const relativePoints = stars
-        .map(star => {
-            const x = ((star.left - minLeft) / (maxLeft - minLeft)) * 100;
-            const y = ((star.top - minTop) / (maxTop - minTop)) * 100;
-            return `${x},${y}`;
-        })
-        .join(' ');
+    // Calcula los puntos relativos para el <polyline>.
+    const relativePoints = useMemo(() =>
+            stars
+                .map(star => {
+                    const x = ((star.left - minLeft) / (maxLeft - minLeft)) * 100;
+                    const y = ((star.top - minTop) / (maxTop - minTop)) * 100;
+                    return `${x},${y}`;
+                })
+                .join(' ')
+        , [stars, minLeft, minTop, maxLeft, maxTop]);
 
+    // Función para obtener el estilo relativo de cada estrella.
     const getRelativeStyle = star => ({
         left: `${((star.left - minLeft) / (maxLeft - minLeft)) * 100}%`,
         top: `${((star.top - minTop) / (maxTop - minTop)) * 100}%`
@@ -105,6 +118,6 @@ const Constellation = ({ data }) => {
             />
         </div>
     );
-};
+});
 
 export default Constellations;

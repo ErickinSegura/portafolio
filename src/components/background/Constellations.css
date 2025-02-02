@@ -8,6 +8,14 @@
     z-index: 2;
 }
 
+/* Añadimos will-change para optimizar la animación */
+.constellation-wrapper,
+.constellation-image,
+.constellation-lines,
+.constellation-star {
+    will-change: transform, opacity;
+}
+
 .constellation-wrapper {
     pointer-events: auto;
 }

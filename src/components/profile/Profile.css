@@ -1,0 +1,65 @@
+/* Contenedor principal para centrar la tarjeta */
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ocupa la altura completa de la pantalla */
+    padding: 1rem;
+    background: transparent; /* Suponiendo que se sobrepone a tu fondo espacial */
+}
+
+/* Tarjeta con efecto glassmorphism */
+.profile-card {
+    width: 400px;
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Encabezado con nombre y título */
+.profile-header {
+    margin-bottom: 1.5rem;
+}
+
+.profile-name {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para los enlaces con iconos */
+.profile-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.profile-link:hover {
+    transform: translateY(-5px);
+    color: #ffd700; /* Cambia a un color dorado en hover */
+}
+
+.icon {
+    font-size: 1.5rem;
+}
