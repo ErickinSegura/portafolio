@@ -11,6 +11,14 @@ const App = () => {
         <Router>
             <StarryBackground />
 
+            <div className="app-content">
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Profile />} />
+                    <Route path="/techstack" element={<Techstack />} />
+                </Routes>
+            </div>
+
 
         </Router>
     );

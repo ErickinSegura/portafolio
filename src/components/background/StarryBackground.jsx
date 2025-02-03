@@ -39,11 +39,10 @@ const StarryBackground = () => {
                         }}
                     />
                 ))}
-
-
+                <Constellations />
             </div>
 
-            <Constellations />
+
         </div>
     );
 };
