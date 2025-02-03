@@ -6,7 +6,6 @@ const StarryBackground = () => {
     const starCount = 150;
     const maxRadius = 100;
 
-    // Memoriza la generación de estrellas para no recrearlas en cada render.
     const stars = useMemo(() =>
             Array.from({ length: starCount }).map(() => {
                 const angle = Math.random() * 2 * Math.PI;
@@ -26,7 +25,6 @@ const StarryBackground = () => {
         <div className="starry-wrapper">
             <div className="animated-background" />
 
-            {/* Contenedor de estrellas con rotación */}
             <div className="stars-container">
                 {stars.map((star, index) => (
                     <div
@@ -42,8 +40,10 @@ const StarryBackground = () => {
                     />
                 ))}
 
-                <Constellations />
+
             </div>
+
+            <Constellations />
         </div>
     );
 };

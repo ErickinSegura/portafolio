@@ -19,7 +19,6 @@
     transform-origin: center center;
 }
 
-/* Aceleración por hardware para elementos animados */
 .starry-wrapper,
 .stars-container,
 .animated-background,

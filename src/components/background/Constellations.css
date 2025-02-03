@@ -8,61 +8,96 @@
     z-index: 2;
 }
 
-/* Añadimos will-change para optimizar la animación */
-.constellation-wrapper,
-.constellation-image,
-.constellation-lines,
-.constellation-star {
-    will-change: transform, opacity;
-}
-
 .constellation-wrapper {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
     pointer-events: auto;
 }
 
-.constellation-star {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 4px rgba(255, 255, 255, 1);
-    animation: starTwinkle 2s ease-in-out infinite alternate;
-}
-
-@keyframes starTwinkle {
-    0% { opacity: 0.6; }
-    50% { opacity: 1; }
-    100% { opacity: 0.6; }
-}
-
 .constellation-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.constellation-star {
+    fill: white;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    transform-origin: center;
+    animation: starTwinkle 3s ease-in-out infinite alternate;
+}
+
+.line-default {
+    fill: none;
+    stroke: rgba(200, 200, 255, 0.25); /* Color más suave */
+    stroke-width: 0.7;
+    stroke-linecap: round;
+    stroke-dasharray: 6 10;
+    transition: all 0.3s ease;
+}
+
+.line-hover {
+    stroke: rgba(194, 129, 237, 0.68);
+    stroke-width: 1.2;
+    stroke-dasharray: 6 10;
+    animation: lineFlow 1.5s linear infinite;
+}
+
+@keyframes lineFlow {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 18; }
+}
+
+.constellation-image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: visible;
+    background-size: contain; /* Ajusta la imagen al contenedor */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, filter 0.3s ease;
     pointer-events: none;
-    transition: stroke 0.5s ease, stroke-width 0.5s ease;
-    stroke-dasharray: 5, 5;
 }
 
-.line-default {
-    fill: none;
-    stroke: rgba(255, 255, 255, 0.1);
-    stroke-width: 1;
-    filter: blur(0.3px);
+.constellation-name {
+    position: absolute;
+    bottom: -1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 0.9rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    opacity: 0;
 }
 
-.line-hover {
-    fill: none;
-    stroke: rgba(255, 255, 255, 0.2);
-    stroke-width: 1.5;
-    animation: pulseLine 2s infinite ease-in-out;
+.constellation-wrapper:hover .constellation-image {
+    opacity: 5;
+    filter: drop-shadow(0 0 8px rgba(194, 129, 237, 1));
 }
 
-@keyframes pulseLine {
+
+.constellation-wrapper:hover .constellation-name {
+    opacity: 1;
+}
+
+@keyframes starTwinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+@keyframes lineFlow {
     0% {
         stroke-dashoffset: 0;
     }
@@ -72,17 +107,4 @@
     100% {
         stroke-dashoffset: 0;
     }
-}
-
-.constellation-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: opacity 0.5s ease;
-    pointer-events: none;
 }
