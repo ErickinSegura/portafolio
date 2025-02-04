@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import './StarryBackground.css';
 import Constellations from "./Constellations";
 
+
 const StarryBackground = () => {
     const starCount = 150;
     const maxRadius = 100;
@@ -41,8 +42,6 @@ const StarryBackground = () => {
                 ))}
                 <Constellations />
             </div>
-
-
         </div>
     );
 };
