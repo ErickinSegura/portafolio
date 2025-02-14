@@ -1,5 +1,6 @@
 :root {
-    --navbar-bg: rgba(13, 12, 34, 0.95);
+    --navbar-bg: rgba(31, 27, 54, 0.25);
+    --mov-navbar-bg: rgba(31, 27, 54, 1);
     --text-primary: rgba(255, 255, 255, 0.9);
     --accent-color: #d8b9ff;
     --transition: all 0.3s ease;
@@ -7,9 +8,8 @@
     --header-height: 70px;
 }
 
-/* Estructura principal */
 .navbar {
-    background: var(--navbar-bg);
+    background: linear-gradient(135deg, rgba(31, 27, 54, 0.4), rgba(31, 27, 54, 0.15));
     backdrop-filter: var(--blur);
     -webkit-backdrop-filter: var(--blur);
     position: fixed;
@@ -18,7 +18,7 @@
     width: 100%;
     height: var(--header-height);
     padding: 1.5rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(31, 27, 54, 0.2);
     box-sizing: border-box;
 }
 
@@ -80,7 +80,6 @@
     left: 10%;
 }
 
-/* Elementos interactivos */
 .hamburger,
 .language-toggle {
     cursor: pointer;
@@ -98,8 +97,8 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 0.75rem;
-    width: 40px;  /* Tamaño cuadrado */
-    height: 40px; /* Tamaño cuadrado */
+    width: 40px;
+    height: 40px;
     z-index: 1000;
     transition: var(--transition);
     justify-content: center;
@@ -116,7 +115,6 @@
     transform-origin: center;
 }
 
-/* Animación corregida para X */
 .hamburger.active .bar:first-child {
     transform: translateY(7px) rotate(45deg);
 }
@@ -130,7 +128,7 @@
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Idioma específico */
+
 .language-toggle {
     width: 50px;
     height: 50px;
@@ -149,7 +147,7 @@
     transform: scale(1.05);
 }
 
-/* Versión móvil */
+
 @media (max-width: 768px) {
     .navbar {
         padding: 1rem;
@@ -165,7 +163,7 @@
         height: 100vh;
         flex-direction: column;
         gap: 1.5rem;
-        background: var(--navbar-bg);
+        background: var(--mov-navbar-bg);
         backdrop-filter: blur(30px);
         -webkit-backdrop-filter: blur(30px);
         padding: calc(var(--header-height) + 1rem) 1.5rem 2rem;
@@ -224,7 +222,18 @@
         justify-content: flex-start;
         width: 100%;
         box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.02);
+        border-radius: 8px;
+        transition: var(--transition);
     }
 
+    .nav-links:hover,
+    .nav-links.active {
+        background: rgba(255, 255, 255, 0.09);
+        color: var(--accent-color);
+    }
 
+    .nav-links:not(:last-child) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 }
