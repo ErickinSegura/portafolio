@@ -1,0 +1,153 @@
+/* Contenedor que centra el sistema en la pantalla */
+.solar-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+    overflow: hidden;
+}
+
+/* Sistema solar */
+.solar-system {
+    position: relative;
+    width: 90vmin; /* Usamos vmin para que sea responsivo */
+    height: 90vmin;
+    max-width: 700px;
+    max-height: 700px;
+    border-radius: 50%;
+}
+
+/* Sol */
+.sun {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15%;
+    height: 15%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #ffcc00, #ff9900);
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 204, 0, 0.8);
+    z-index: 10;
+}
+
+/* Efecto de brillo del sol */
+.sun-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), transparent 70%);
+    border-radius: 50%;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilos comunes para todas las órbitas */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform-origin: center;
+    animation: orbitRotation linear infinite;
+}
+
+/* Estilos para los planetas */
+.planet {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+/* Órbitas individuales con tamaños y velocidades diferentes */
+.orbit-react {
+    width: 30%;
+    height: 30%;
+    margin-left: -15%;
+    margin-top: -15%;
+    animation-duration: 8s;
+}
+
+.orbit-html {
+    width: 40%;
+    height: 40%;
+    margin-left: -20%;
+    margin-top: -20%;
+    animation-duration: 12s;
+}
+
+.orbit-css {
+    width: 50%;
+    height: 50%;
+    margin-left: -25%;
+    margin-top: -25%;
+    animation-duration: 16s;
+}
+
+.orbit-js {
+    width: 60%;
+    height: 60%;
+    margin-left: -30%;
+    margin-top: -30%;
+    animation-duration: 20s;
+}
+
+.orbit-tailwind {
+    width: 70%;
+    height: 70%;
+    margin-left: -35%;
+    margin-top: -35%;
+    animation-duration: 24s;
+}
+
+.orbit-kotlin {
+    width: 80%;
+    height: 80%;
+    margin-left: -40%;
+    margin-top: -40%;
+    animation-duration: 28s;
+}
+
+/* Animación de rotación para cada órbita */
+@keyframes orbitRotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .solar-system {
+        width: 80vmin;
+        height: 80vmin;
+    }
+
+    .planet {
+        padding: 5px;
+    }
+
+    .planet svg {
+        width: 30px;
+        height: 30px;
+    }
+}

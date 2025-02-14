@@ -1,0 +1,114 @@
+.constellations-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.constellation-wrapper {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+    pointer-events: auto;
+}
+
+.constellation-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.constellation-star {
+    fill: white;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+    transform-origin: center;
+    animation: starTwinkle 3s ease-in-out infinite alternate;
+}
+
+.line-default {
+    fill: none;
+    stroke: rgba(200, 200, 255, 0.1);
+    stroke-width: 0.7;
+    stroke-linecap: round;
+    stroke-dasharray: 6 10;
+    transition: all 0.3s ease;
+}
+
+.line-hover {
+    stroke: rgba(194, 129, 237, 0.68);
+    stroke-width: 1;
+    stroke-dasharray: 6 10;
+    animation: lineFlow 1.5s linear infinite;
+}
+
+@keyframes lineFlow {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 18; }
+}
+
+.constellation-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s ease, filter 0.3s ease;
+    pointer-events: none;
+}
+
+.constellation-name {
+    position: absolute;
+    bottom: -1.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 0.9rem;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    opacity: 0;
+
+}
+
+.constellation-wrapper:hover .constellation-image {
+    opacity: 0.2;
+    filter:
+            brightness(0.5)
+            drop-shadow(0 0 12px rgba(220, 150, 255, 1))
+            drop-shadow(0 0 20px rgba(255, 180, 255, 0.8));
+}
+
+
+.constellation-wrapper:hover .constellation-name {
+    opacity: 1;
+}
+
+@keyframes starTwinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+}
+
+@keyframes lineFlow {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dashoffset: -5;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

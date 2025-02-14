@@ -1,0 +1,136 @@
+:root {
+    --profile-bg: rgba(31, 27, 54, 0.25);
+    --blur-intensity: blur(20px);
+    --accent-color: #d8b9ff;
+    --text-primary: rgba(255, 255, 255, 0.9);
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    background: transparent;
+}
+
+.profile-card {
+    background: linear-gradient(135deg, rgba(31, 27, 54, 0.4), rgba(31, 27, 54, 0.15));
+    backdrop-filter: var(--blur-intensity) saturate(180%);
+    -webkit-backdrop-filter: var(--blur-intensity) saturate(180%);
+    border-radius: 20px;
+    border: 1px solid rgba(31, 27, 54, 0.3);
+    padding: 2.5rem;
+    max-width: 380px;
+    width: 100%;
+    box-shadow:
+            0 8px 32px rgba(0, 0, 0, 0.3),
+            inset 0 0 10px rgba(31, 27, 54, 0.2);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.profile-name {
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.profile-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #d8b9ff;
+    border-radius: 2px;
+}
+
+.profile-title {
+    color: rgba(255, 255, 255);
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    font-weight: 350;
+    text-align: center;
+}
+
+.profile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.profile-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.profile-link:hover {
+    background: rgba(216, 185, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.profile-link:hover .link-underline {
+    width: 100%;
+}
+
+.link-icon {
+    font-size: 1.5rem;
+    color: #d8b9ff;
+    min-width: 30px;
+}
+
+.link-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d8b9ff;
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 768px) {
+
+    .profile-card {
+        padding: 2rem;
+        margin: 1rem;
+
+    }
+
+    .profile-name {
+        font-size: 2rem;
+    }
+
+    .profile-title {
+        font-size: 1rem;
+    }
+
+    .profile-link {
+        padding: 1rem;
+    }
+}
