@@ -5,20 +5,23 @@ import Navbar from './components/navbar/Navbar';
 import Home from './components/Home';
 import TechStack from './components/techstack/TechStack';
 import './App.css';
+import MainBlog from "./components/blog/MainBlog";
 
 
 const App = () => {
     return (
         <Router>
-            <StarryBackground />
+            <StarryBackground/>
             <div className="app-content">
-                <Navbar />
+                <Navbar/>
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/techstack" element={<TechStack />} />
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/techstack" element={<TechStack/>}/>
+                    <Route path={"/blog"} element={<MainBlog/>}/>
                 </Routes>
             </div>
         </Router>
+
     );
 };
 

@@ -1,0 +1,156 @@
+:root {
+    --card-bg: rgba(31, 27, 54, 0.25);
+    --card-gradient: linear-gradient(135deg, rgba(31, 27, 54, 0.4), rgba(31, 27, 54, 0.15));
+    --card-border: rgba(31, 27, 54, 0.3);
+    --inner-card-bg: linear-gradient(135deg, rgba(57, 50, 99, 0.4), rgba(67, 59, 115, 0.15));
+    --inner-card-border: rgba(108, 94, 186, 0.3);
+    --accent-color: #d8b9ff;
+    --text-primary: rgba(255, 255, 255, 0.9);
+    --blur: blur(50px);
+}
+
+.blog-container {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.blog-title {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    background: var(--card-gradient);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border-radius: 15px;
+    border: 1px solid var(--card-border);
+    padding: 1rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+    margin-top: 0.5rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    width: 100%;
+}
+
+.blog-card {
+    background: var(--card-gradient);
+    backdrop-filter: var(--blur);
+    -webkit-backdrop-filter: var(--blur);
+    border-radius: 15px;
+    border: 1px solid var(--card-border);
+    padding: 0;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px; /* Ajusta esta altura según lo que desees */
+    object-fit: cover;
+    display: block; /* Asegura que no haya espacio extra debajo de la imagen */
+}
+
+.blog-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0;
+}
+
+.blog-card-title {
+    font-size: 2rem;
+    color: var(--text-primary);
+    background: var(--inner-card-bg);
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 1px solid var(--inner-card-border);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.blog-card-button {
+    display: inline-block;
+    color: var(--accent-color);
+    text-decoration: none;
+    border: 1px solid var(--accent-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.blog-card-button:hover {
+    background: var(--accent-color);
+    color: #000;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .blog-container {
+        padding: 1rem;
+        max-width: 320px;
+    }
+
+    .blog-title {
+        font-size: 2rem;
+        padding: 0.8rem 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .blog-image {
+        height: 200px;
+    }
+
+    .blog-card-title {
+        font-size: 1.5rem;
+        padding: 0.6rem;
+    }
+
+    .blog-card-excerpt {
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+
+    .blog-card-button {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .blog-grid {
+        grid-template-columns: repeat(3 , 1fr);
+    }
+}

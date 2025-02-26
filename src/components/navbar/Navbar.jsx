@@ -57,6 +57,14 @@ const Navbar = () => {
                             {t('Techstack')}
                         </NavLink>
                     </li>
+                    <li className="nav-item" onClick={() => setIsMenuActive(false)}>
+                        <NavLink
+                            to="/blog"
+                            className={({ isActive }) => (isActive ? 'nav-links active' : 'nav-links')}
+                        >
+                            {t('Techstack')}
+                        </NavLink>
+                    </li>
 
                     {/* Solo mostrar en versión móvil cuando el menú está activo */}
                     {isMenuActive && (
