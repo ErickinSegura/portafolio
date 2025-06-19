@@ -1,10 +1,3 @@
-:root {
-    --profile-bg: rgba(31, 27, 54, 0.25);
-    --blur-intensity: blur(20px);
-    --accent-color: #d8b9ff;
-    --text-primary: rgba(255, 255, 255, 0.9);
-}
-
 .profile-container {
     display: flex;
     justify-content: center;
@@ -14,21 +7,50 @@
     background: transparent;
 }
 
+
 .profile-card {
-    background: linear-gradient(135deg, rgba(31, 27, 54, 0.4), rgba(31, 27, 54, 0.15));
-    backdrop-filter: var(--blur-intensity) saturate(180%);
-    -webkit-backdrop-filter: var(--blur-intensity) saturate(180%);
-    border-radius: 20px;
-    border: 1px solid rgba(31, 27, 54, 0.3);
+    background: linear-gradient(135deg,
+    rgba(31, 27, 54, 0.25),
+    rgba(31, 27, 54, 0.15),
+    rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: var(--blur-intensity) saturate(180%) contrast(110%);
+    -webkit-backdrop-filter: var(--blur-intensity) saturate(180%) contrast(110%);
+    border-radius: 24px;
+    border: 1px solid rgba(31, 27, 54, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2.5rem;
     max-width: 380px;
     width: 100%;
     box-shadow:
+            0 0 20px rgba(216, 185, 255, 0.1),
             0 8px 32px rgba(0, 0, 0, 0.3),
-            inset 0 0 10px rgba(31, 27, 54, 0.2);
-    transition: transform 0.3s ease;
+            inset 0 1px 0 rgba(255, 255, 255, 0.08),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+}
+
+.profile-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.profile-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15), transparent);
 }
 
 .profile-content {
@@ -36,6 +58,8 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+    position: relative;
+    z-index: 2;
 }
 
 .profile-name {
@@ -45,6 +69,7 @@
     text-align: center;
     position: relative;
     padding-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile-name::after {
@@ -55,16 +80,18 @@
     transform: translateX(-50%);
     width: 60px;
     height: 2px;
-    background: #d8b9ff;
+    background: linear-gradient(90deg, transparent, #d8b9ff, transparent);
     border-radius: 2px;
+    box-shadow: 0 0 10px rgba(216, 185, 255, 0.5);
 }
 
 .profile-title {
-    color: rgba(255, 255, 255);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 1.2rem;
     margin: 0.5rem 0;
     font-weight: 350;
     text-align: center;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
 
 .profile-links {
@@ -82,16 +109,44 @@
     padding: 1rem 1.5rem;
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    border-radius: 10px;
+    border-radius: 12px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.03);
+    background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.03)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.profile-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .profile-link:hover {
-    background: rgba(216, 185, 255, 0.05);
+    background: linear-gradient(135deg,
+    rgba(216, 185, 255, 0.12),
+    rgba(255, 255, 255, 0.08)
+    );
     transform: translateY(-2px);
+    border-color: rgba(216, 185, 255, 0.3);
+    box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.profile-link:hover::before {
+    opacity: 1;
 }
 
 .profile-link:hover .link-underline {
@@ -102,6 +157,7 @@
     font-size: 1.5rem;
     color: #d8b9ff;
     min-width: 30px;
+    filter: drop-shadow(0 0 5px rgba(216, 185, 255, 0.3));
 }
 
 .link-underline {
@@ -110,16 +166,16 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: #d8b9ff;
+    background: linear-gradient(90deg, #d8b9ff, rgba(216, 185, 255, 0.6));
     transition: width 0.3s ease;
+    box-shadow: 0 0 8px rgba(216, 185, 255, 0.4);
 }
 
 @media (max-width: 768px) {
-
     .profile-card {
         padding: 2rem;
         margin: 1rem;
-
+        border-radius: 20px;
     }
 
     .profile-name {
@@ -132,5 +188,6 @@
 
     .profile-link {
         padding: 1rem;
+        border-radius: 10px;
     }
 }

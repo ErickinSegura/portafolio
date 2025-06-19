@@ -42,21 +42,7 @@ const Profile = () => {
                             onClick={handleCVDownload}
                             className="profile-link"
                             style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '1rem',
-                                padding: '1rem 1.5rem',
-                                color: 'rgba(255, 255, 255, 0.9)',
-                                textDecoration: 'none',
-                                borderRadius: '10px',
-                                transition: 'all 0.3s ease',
-                                position: 'relative',
-                                overflow: 'hidden',
-                                background: 'rgba(255, 255, 255, 0.03)',
-                                border: 'none',
-                                cursor: 'pointer',
-                                width: '100%',
-                                textAlign: 'left'
+                                cursor: 'pointer'
                             }}
                         >
                             <FaFilePdf className="link-icon" />

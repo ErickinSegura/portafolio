@@ -11,3 +11,123 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  /* Colores base */
+  --primary-dark: #1f1b36;
+  --accent-color: #d8b9ff;
+  --text-primary: rgba(255, 255, 255, 0.95);
+  --text-secondary: rgba(255, 255, 255, 0.85);
+
+  /* Efectos glassmorphism */
+  --glass-bg-primary: linear-gradient(135deg,
+  rgba(31, 27, 54, 0.25),
+  rgba(31, 27, 54, 0.15),
+  rgba(255, 255, 255, 0.05)
+  );
+  --glass-bg-secondary: linear-gradient(135deg,
+  rgba(31, 27, 54, 0.4),
+  rgba(31, 27, 54, 0.15)
+  );
+  --glass-bg-subtle: linear-gradient(135deg,
+  rgba(255, 255, 255, 0.08),
+  rgba(255, 255, 255, 0.03)
+  );
+
+  /* Blur y filtros */
+  --blur-strong: blur(25px);
+  --blur-medium: blur(15px);
+  --blur-subtle: blur(10px);
+  --glass-filters: saturate(180%) contrast(110%);
+
+  /* Bordes glassmorphism */
+  --glass-border: 1px solid rgba(31, 27, 54, 0.2);
+  --glass-border-light: 1px solid rgba(255, 255, 255, 0.1);
+  --glass-border-top: 1px solid rgba(255, 255, 255, 0.15);
+  --glass-border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Sombras glassmorphism */
+  --glass-shadow-primary:
+          0 0 20px rgba(216, 185, 255, 0.1),
+          0 8px 32px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+  --glass-shadow-secondary:
+          0 4px 15px rgba(0, 0, 0, 0.2),
+          inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  /* Transiciones */
+  --transition-smooth: all 0.3s ease;
+  --transition-bounce: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Dimensiones */
+  --header-height: 70px;
+  --border-radius-large: 24px;
+  --border-radius-medium: 12px;
+  --border-radius-small: 8px;
+}
+
+/* ===== CLASES GLASSMORPHISM REUTILIZABLES ===== */
+
+.glass-primary {
+  background: var(--glass-bg-primary);
+  backdrop-filter: var(--blur-strong) var(--glass-filters);
+  -webkit-backdrop-filter: var(--blur-strong) var(--glass-filters);
+  border: var(--glass-border);
+  border-top: var(--glass-border-top);
+  border-left: var(--glass-border-left);
+  box-shadow: var(--glass-shadow-primary);
+}
+
+.glass-secondary {
+  background: var(--glass-bg-secondary);
+  backdrop-filter: var(--blur-medium);
+  -webkit-backdrop-filter: var(--blur-medium);
+  border-bottom: var(--glass-border);
+}
+
+.glass-subtle {
+  background: var(--glass-bg-subtle);
+  backdrop-filter: var(--blur-subtle);
+  -webkit-backdrop-filter: var(--blur-subtle);
+  border: var(--glass-border-light);
+}
+
+.glass-accent-glow {
+  box-shadow: var(--glass-shadow-primary);
+}
+
+.glass-hover-effect {
+  transition: var(--transition-smooth);
+}
+
+.glass-hover-effect:hover {
+  background: linear-gradient(135deg,
+  rgba(216, 185, 255, 0.12),
+  rgba(255, 255, 255, 0.08)
+  );
+  border-color: rgba(216, 185, 255, 0.3);
+  transform: translateY(-2px);
+  box-shadow: var(--glass-shadow-secondary);
+}
+
+/* Efectos decorativos glassmorphism */
+.glass-shine-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.glass-shine-left::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
