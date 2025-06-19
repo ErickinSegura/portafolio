@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaGithub, FaVideo} from 'react-icons/fa';
+import {FaGithub, FaVideo, FaYoutube} from 'react-icons/fa';
 import {
     SiKotlin,
     SiSupabase,
@@ -10,12 +10,28 @@ import {
     SiFirebase,
     SiFlask,
     SiOpenai,
-    SiHtml5
+    SiHtml5, SiOracle, SiTelegram, SiDocker, SiKubernetes, SiPostgresql, SiDotnet, SiCss3
 } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import './Projects.css';
+import {TbBrandCSharp} from "react-icons/tb";
 
 const projectsData = [
+    {
+        titleKey: "projects.rift.name",
+        descriptionKey: "projects.rift.description",
+        imageUrl: "./images/projects/rift.png",
+        repoLink: "https://github.com/ErickinSegura/AREL",
+        demo: "https://youtu.be/L8O_YEM0nLs",
+        techStack: [
+            { name: "React", icon: <SiReact /> },
+            { name: "Oracle Cloud", icon: <SiOracle /> },
+            { name: "TailwindCSS", icon: <SiTailwindcss /> },
+            { name: "Docker", icon: <SiDocker /> },
+            { name: "Kubernetes", icon: <SiKubernetes /> },
+            { name: "Telegram", icon: <SiTelegram /> },
+        ]
+    },
     {
         titleKey: "projects.juraid.name",
         descriptionKey: "projects.juraid.description",
@@ -23,7 +39,9 @@ const projectsData = [
         repoLink: "https://github.com/ErickinSegura/SECAL-SACV",
         techStack: [
             { name: "Kotlin", icon: <SiKotlin /> },
-            { name: "Supabase", icon: <SiSupabase /> }
+            { name: "Supabase", icon: <SiSupabase /> },
+            { name: "Postgresql", icon: <SiPostgresql /> },
+            { name: "Firebase", icon: <SiFirebase /> },
         ]
     },
     {
@@ -33,7 +51,9 @@ const projectsData = [
         repoLink: "https://github.com/ErickinSegura/Zucaritas-TM",
         techStack: [
             { name: "Unity", icon: <SiUnity /> },
-            { name: "MySQL", icon: <SiMysql /> }
+            { name: ".NET", icon: <SiDotnet /> },
+            { name: "C#", icon: <TbBrandCSharp /> },
+            { name: "MySQL", icon: <SiMysql /> },
         ]
     },
     {
@@ -55,7 +75,8 @@ const projectsData = [
         techStack: [
             { name: "Flask", icon: <SiFlask /> },
             { name: "OpenAI", icon: <SiOpenai /> },
-            { name: "HTML", icon: <SiHtml5 /> }
+            { name: "HTML", icon: <SiHtml5 /> },
+            { name: "CSS", icon: <SiCss3 /> },
         ]
     }
 ];
@@ -100,7 +121,7 @@ const Projects = () => {
                                         rel="noopener noreferrer"
                                         className="project-button glass-subtle glass-hover-effect"
                                     >
-                                        <FaVideo className="button-icon" /> {t('Demo')}
+                                        <FaYoutube className="button-icon" /> {t('Demo')}
                                     </a>
                                 }
                             </div>

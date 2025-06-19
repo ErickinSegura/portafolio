@@ -2,7 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Navbar.css';
-import {Image} from "lucide-react";
 
 const Navbar = () => {
     const { t, i18n } = useTranslation();

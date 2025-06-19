@@ -124,6 +124,12 @@
     color: var(--text-primary);
 }
 
+.tech-icon {
+    height: 1em;
+    display: flex;
+    align-items: center;
+}
+
 .project-buttons {
     display: flex;
     gap: 1rem;

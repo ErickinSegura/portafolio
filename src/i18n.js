@@ -11,6 +11,10 @@ const resources = {
             "Repo": "Repository",
             "Demo": "Demo",
             "projects": {
+                "rift": {
+                    "name": "Rift",
+                    "description": "A multiplatform tool (Web and Telegram Bot) for managing projects based on agile methodologies, including progress tracking and report generation with charts."
+                },
                 "juraid": {
                     "name": "JurAid",
                     "description": "Android application that allows users to address legal issues efficiently and securely. With a minimalist and professional interface."
@@ -39,6 +43,10 @@ const resources = {
             "Repo": "Repositorio",
             "Demo": "Demo",
             "projects": {
+                "rift": {
+                    "name": "Rift",
+                    "description": "Una herramienta multiplataforma (Web y Bot de Telegram) que sirve para gestionar proyectos basados en metdologías ágiles, con medición de progresos y generación de reportes con gráficas"
+                },
                 "juraid": {
                     "name": "JurAid",
                     "description": "Aplicación Android que permite a los usuarios abordar procesos problemas legales de manera eficiente y segura. Con una interfaz minimalista y profesional"
