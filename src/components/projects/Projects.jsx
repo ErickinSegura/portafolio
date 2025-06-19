@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';
+import {FaGithub, FaVideo} from 'react-icons/fa';
 import {
     SiKotlin,
     SiSupabase,
@@ -92,6 +92,17 @@ const Projects = () => {
                                 >
                                     <FaGithub className="button-icon" /> {t('Repo')}
                                 </a>
+
+                                {project.demo &&
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="project-button"
+                                    >
+                                        <FaVideo className="button-icon" /> {t('Demo')}
+                                    </a>
+                                }
                             </div>
                         </div>
                     </div>

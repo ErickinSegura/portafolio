@@ -8,7 +8,8 @@ const resources = {
             "Techstack": "Techstack",
             "Description": "Experienced student in fullstack development for multiple platforms.",
             "Projects": "Projects",
-            "Repo": "Repo",
+            "Repo": "Repository",
+            "Demo": "Demo",
             "projects": {
                 "juraid": {
                     "name": "JurAid",
@@ -36,6 +37,7 @@ const resources = {
             "Description": "Estudiante con experiencia en el desarrollo fullstack para multiples plataformas.",
             "Projects": "Proyectos",
             "Repo": "Repositorio",
+            "Demo": "Demo",
             "projects": {
                 "juraid": {
                     "name": "JurAid",
