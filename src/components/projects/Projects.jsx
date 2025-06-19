@@ -65,7 +65,7 @@ const Projects = () => {
 
     return (
         <div className="projects-container">
-            <h2 className="projects-title glass-primary glass-shine-top glass-shine-left">{t('Projects')}</h2>
+            <h2 className="projects-title glass-primary glass-shine-top">{t('Projects')}</h2>
             <div className="projects-grid">
                 {projectsData.map((project, index) => (
                     <div className="project-card glass-primary glass-shine-top glass-shine-left" key={index}>
@@ -73,8 +73,8 @@ const Projects = () => {
                             <img src={project.imageUrl} alt={t(project.titleKey)} className="project-image" />
                         )}
                         <div className="project-content">
-                            <h3 className="project-title glass-primary glass-shine-top glass-shine-left">{t(project.titleKey)}</h3>
-                            <p className="project-description glass-primary glass-shine-top glass-shine-left">{t(project.descriptionKey)}</p>
+                            <h3 className="project-title glass-secondary glass-shine-top">{t(project.titleKey)}</h3>
+                            <p className="project-description glass-secondary glass-shine-top">{t(project.descriptionKey)}</p>
                             <div className="project-techstack">
                                 {project.techStack.map((tech, idx) => (
                                     <div className="tech-item glass-subtle" key={idx}>
