@@ -65,19 +65,19 @@ const Projects = () => {
 
     return (
         <div className="projects-container">
-            <h2 className="projects-title">{t('Projects')}</h2>
+            <h2 className="projects-title glass-primary glass-shine-top glass-shine-left">{t('Projects')}</h2>
             <div className="projects-grid">
                 {projectsData.map((project, index) => (
-                    <div className="project-card" key={index}>
+                    <div className="project-card glass-primary glass-shine-top glass-shine-left" key={index}>
                         {project.imageUrl && (
                             <img src={project.imageUrl} alt={t(project.titleKey)} className="project-image" />
                         )}
                         <div className="project-content">
-                            <h3 className="project-title">{t(project.titleKey)}</h3>
-                            <p className="project-description">{t(project.descriptionKey)}</p>
+                            <h3 className="project-title glass-primary glass-shine-top glass-shine-left">{t(project.titleKey)}</h3>
+                            <p className="project-description glass-primary glass-shine-top glass-shine-left">{t(project.descriptionKey)}</p>
                             <div className="project-techstack">
                                 {project.techStack.map((tech, idx) => (
-                                    <div className="tech-item" key={idx}>
+                                    <div className="tech-item glass-subtle" key={idx}>
                                         <span className="tech-icon">{tech.icon}</span>
                                         <span className="tech-name">{tech.name}</span>
                                     </div>
@@ -88,7 +88,7 @@ const Projects = () => {
                                     href={project.repoLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="project-button"
+                                    className="project-button glass-subtle glass-hover-effect"
                                 >
                                     <FaGithub className="button-icon" /> {t('Repo')}
                                 </a>
@@ -98,7 +98,7 @@ const Projects = () => {
                                         href={project.demo}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="project-button"
+                                        className="project-button glass-subtle glass-hover-effect"
                                     >
                                         <FaVideo className="button-icon" /> {t('Demo')}
                                     </a>

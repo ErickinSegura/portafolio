@@ -4,53 +4,16 @@
     align-items: center;
     min-height: 100vh;
     padding: 2rem;
-    background: transparent;
 }
 
-
 .profile-card {
-    background: linear-gradient(135deg,
-    rgba(31, 27, 54, 0.25),
-    rgba(31, 27, 54, 0.15),
-    rgba(255, 255, 255, 0.05)
-    );
-    backdrop-filter: var(--blur-intensity) saturate(180%) contrast(110%);
-    -webkit-backdrop-filter: var(--blur-intensity) saturate(180%) contrast(110%);
-    border-radius: 24px;
-    border: 1px solid rgba(31, 27, 54, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-large);
     padding: 2.5rem;
     max-width: 380px;
     width: 100%;
-    box-shadow:
-            0 0 20px rgba(216, 185, 255, 0.1),
-            0 8px 32px rgba(0, 0, 0, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.08),
-            inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
-}
-
-.profile-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-}
-
-.profile-card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1px;
-    bottom: 0;
-    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15), transparent);
 }
 
 .profile-content {
@@ -63,8 +26,8 @@
 }
 
 .profile-name {
-    font-size: 2.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 3.2rem;
+    color: var(--text-primary);
     margin: 0;
     text-align: center;
     position: relative;
@@ -78,16 +41,15 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #d8b9ff, transparent);
+    width: 140px;
+    height: 4px;
+    background: var(--accent-color);
     border-radius: 2px;
-    box-shadow: 0 0 10px rgba(216, 185, 255, 0.5);
 }
 
 .profile-title {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-size: 1.3rem;
     margin: 0.5rem 0;
     font-weight: 350;
     text-align: center;
@@ -107,18 +69,11 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-primary);
     text-decoration: none;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+    border-radius: var(--border-radius-medium);
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg,
-    rgba(255, 255, 255, 0.08),
-    rgba(255, 255, 255, 0.03)
-    );
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
 }
 
 .profile-link::before {
@@ -133,18 +88,6 @@
     transition: opacity 0.3s ease;
 }
 
-.profile-link:hover {
-    background: linear-gradient(135deg,
-    rgba(216, 185, 255, 0.12),
-    rgba(255, 255, 255, 0.08)
-    );
-    transform: translateY(-2px);
-    border-color: rgba(216, 185, 255, 0.3);
-    box-shadow:
-            0 8px 25px rgba(0, 0, 0, 0.2),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
 .profile-link:hover::before {
     opacity: 1;
 }
@@ -155,7 +98,7 @@
 
 .link-icon {
     font-size: 1.5rem;
-    color: #d8b9ff;
+    color: var(--accent-color);
     min-width: 30px;
     filter: drop-shadow(0 0 5px rgba(216, 185, 255, 0.3));
 }
@@ -166,7 +109,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #d8b9ff, rgba(216, 185, 255, 0.6));
+    background: linear-gradient(90deg, var(--accent-color), rgba(216, 185, 255, 0.6));
     transition: width 0.3s ease;
     box-shadow: 0 0 8px rgba(216, 185, 255, 0.4);
 }
