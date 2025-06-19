@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import StarryBackground from './components/background/StarryBackground';
 import Navbar from './components/navbar/Navbar';
-import Home from './components/Home';
+import Home from './components/home/Home';
 import TechStack from './components/techstack/TechStack';
 import './App.css';
 

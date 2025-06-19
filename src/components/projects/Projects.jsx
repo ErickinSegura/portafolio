@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaGithub, FaVideo, FaYoutube} from 'react-icons/fa';
+import {FaGithub, FaYoutube} from 'react-icons/fa';
 import {
     SiKotlin,
     SiSupabase,
