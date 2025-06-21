@@ -2,43 +2,62 @@ import React, { useState } from 'react';
 import './TechStack.css';
 import './TechStackTabs.css';
 import { useTranslation } from 'react-i18next';
-import {SiJavascript, SiReact, SiTailwindcss, SiNodedotjs, SiMongodb, SiExpress, SiPostgresql, SiPython, SiDjango, SiCss3, SiVuedotjs, SiAngular, SiBootstrap, SiSass} from "react-icons/si";
+import {
+    SiJavascript,
+    SiReact,
+    SiTailwindcss,
+    SiPostgresql,
+    SiCss3,
+    SiSpringboot,
+    SiKotlin,
+    SiFlask,
+    SiFastapi,
+    SiMysql,
+    SiFirebase,
+    SiSupabase,
+    SiOracle,
+    SiFigma,
+    SiPhotopea,
+    SiGit,
+    SiGithub,
+    SiDocker,
+    SiDotnet
+} from "react-icons/si";
 
 const TechStacks = {
     frontend: {
-        name: 'Frontend',
         elements: [
             {name: 'JavaScript', icon: <SiJavascript />},
             {name: 'React', icon: <SiReact />},
-            {name: 'Vue.js', icon: <SiVuedotjs />},
-            {name: 'Angular', icon: <SiAngular />},
+            {name: 'TailwindCSS', icon: <SiTailwindcss />},
+            {name: 'CSS3', icon: <SiCss3 />},
         ]
     },
     backend: {
-        name: 'Backend',
         elements: [
-            {name: 'Node.js', icon: <SiNodedotjs />},
-            {name: 'Express', icon: <SiExpress />},
-            {name: 'Python', icon: <SiPython />},
-            {name: 'Django', icon: <SiDjango />},
+            {name: 'Java Springboot', icon: <SiSpringboot />},
+            {name: '.NET', icon: <SiDotnet />},
+            {name: 'Kotlin', icon: <SiKotlin />},
+            {name: 'Flask', icon: <SiFlask />},
+            {name: 'FastAPI', icon: <SiFastapi />},
         ]
     },
     database: {
-        name: 'Database',
         elements: [
-            {name: 'MongoDB', icon: <SiMongodb />},
+            {name: 'MySQL', icon: <SiMysql />},
             {name: 'PostgreSQL', icon: <SiPostgresql />},
-            {name: 'Express', icon: <SiExpress />},
-            {name: 'Node.js', icon: <SiNodedotjs />},
+            {name: 'Oracle SQL', icon: <SiOracle />},
+            {name: 'Firebase', icon: <SiFirebase />},
+            {name: 'Supabase', icon: <SiSupabase />},
         ]
     },
-    styling: {
-        name: 'Styling',
+    extra: {
         elements: [
-            {name: 'TailwindCSS', icon: <SiTailwindcss />},
-            {name: 'Bootstrap', icon: <SiBootstrap />},
-            {name: 'Sass', icon: <SiSass />},
-            {name: 'CSS3', icon: <SiCss3 />},
+            {name: 'Git', icon: <SiGit />},
+            {name: 'Github', icon: <SiGithub />},
+            {name: 'Docker', icon: <SiDocker />},
+            {name: 'Figma', icon: <SiFigma />},
+            {name: 'Photopea', icon: <SiPhotopea />},
         ]
     }
 };
@@ -46,35 +65,47 @@ const TechStacks = {
 const TechStack = () => {
     const { t, i18n } = useTranslation();
     const [activeTab, setActiveTab] = useState('frontend');
+    const [isTransitioning, setIsTransitioning] = useState(false);
+
+    const handleTabChange = (newTab) => {
+        if (newTab !== activeTab) {
+            setIsTransitioning(true);
+            setTimeout(() => {
+                setActiveTab(newTab);
+                setTimeout(() => {
+                    setIsTransitioning(false);
+                }, 100);
+            }, 300);
+        }
+    };
 
     return (
         <div className="tech-stack-container">
             {/* Título centrado */}
             <div className="title-section">
-                <h2 className="tech-title glass-primary glass-shine-top">{t('Projects')}</h2>
+                <h2 className="tech-title glass-primary glass-shine-top">{t('Techstack')}</h2>
             </div>
 
-            {/* Contenedor principal con tabs a la izquierda y orbit a la derecha */}
             <div className="main-content">
                 {/* Tabs a la izquierda */}
                 <div className="tabs-section">
                     <div className="tabs-container glass-primary glass-shine-top glass-shine-left">
                         <div className="tabs-wrapper">
-                            {Object.entries(TechStacks).map(([key, stack]) => (
+                            {Object.keys(TechStacks).map((key) => (
                                 <button
                                     key={key}
-                                    className={`tab-button ${activeTab === key ? 'active' : ''}`}
-                                    onClick={() => setActiveTab(key)}
+                                    className={`tab-button glass-subtle glass-hover-effect ${activeTab === key ? 'active' : ''}`}
+                                    onClick={() => handleTabChange(key)}
                                 >
-                                    {stack.name}
+                                    {t(`technology.${key}.name`)}
                                 </button>
                             ))}
                         </div>
-                        <div className="tech-list">
-                            <h3>Tecnologías en {TechStacks[activeTab].name}</h3>
+                        <div className={`tech-list ${isTransitioning ? 'transitioning' : ''}`}>
+                            <h3>{t(`technology.${activeTab}.description`)}</h3>
                             <ul>
                                 {TechStacks[activeTab].elements.map((tech, index) => (
-                                    <li key={index} className="tech-list-item">
+                                    <li key={index} className="tech-list-item" style={{ animationDelay: `${index * 0.1}s` }}>
                                         <span className="tech-list-icon">{tech.icon}</span>
                                         <span className="tech-list-name">{tech.name}</span>
                                     </li>
@@ -87,15 +118,15 @@ const TechStack = () => {
                 {/* Agujero negro y órbitas a la derecha */}
                 <div className="orbit-section">
                     <div className="orbit-container">
-                        <div className="background-container">
+                        <div className={`background-container ${isTransitioning ? 'transitioning' : ''}`}>
                             <div className="blackhole">
                                 <div className="blackhole-before"></div>
                                 <div className="blackhole-after"></div>
                             </div>
-                            <div className="rotating-box">
+                            <div className={`rotating-box ${isTransitioning ? 'pulse-animation' : ''}`}>
                                 <ul className="rotation-list">
                                     {TechStacks[activeTab].elements.map((tech, index) => (
-                                        <li key={index} className={`list-item item-${index + 1}`}>
+                                        <li key={`${activeTab}-${index}`} className={`list-item item-${index + 1} ${isTransitioning ? 'item-fade-in' : ''}`} style={{ animationDelay: `${index * 0.15}s` }}>
                                             <span>
                                                 <div className="tech-content">
                                                     <div className="tech-icon">{tech.icon}</div>

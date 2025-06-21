@@ -31,13 +31,31 @@ const resources = {
                     "name": "Lux (HackMTY2024)",
                     "description": "Service with a web platform designed for SMEs, providing business owners with tools to analyze, report, and generate ideas using natural language."
                 }
+            },
+            "technology":  {
+                "frontend" :{
+                    "name": "Frontend",
+                    "description": "Frontend Technologies",
+                },
+                "backend": {
+                    "name": "Backend",
+                    "description": "Backend Technologies",
+                },
+                "database": {
+                    "name": "Database",
+                    "description": "Database Technologies",
+                },
+                "extra": {
+                    "name": "Extras",
+                    "description": "Extra Technologies",
+                }
             }
         }
     },
     es: {
         translation: {
             "Principal": "Principal",
-            "Techstack": "Techstack",
+            "Techstack": "Tecnologías",
             "Description": "Estudiante con experiencia en el desarrollo fullstack para multiples plataformas.",
             "Projects": "Proyectos",
             "Repo": "Repositorio",
@@ -62,6 +80,24 @@ const resources = {
                 "lux": {
                     "name": "Lux (HackMTY2024)",
                     "description": "Servicio con plataforma web diseñada para PYMES que provee a dueños de negocios herramientas para analizar, reportar y generar ideas usando lenguaje natural"
+                }
+            },
+            "technology":  {
+                "frontend" :{
+                    "name": "Frontend",
+                    "description": "Tecnologías de Frontend",
+                },
+                "backend": {
+                    "name": "Backend",
+                    "description": "Tecnologías de Backend",
+                },
+                "database": {
+                    "name": "Base de Datos",
+                    "description": "Tecnologías de Bases de Datos",
+                },
+                "extra": {
+                    "name": "Extras",
+                    "description": "Tecnologías Extra",
                 }
             }
         }

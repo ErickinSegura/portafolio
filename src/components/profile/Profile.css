@@ -9,7 +9,7 @@
 .profile-card {
     border-radius: var(--border-radius-large);
     padding: 2.5rem;
-    max-width: 380px;
+    max-width: 500px;
     width: 100%;
     transition: var(--transition-smooth);
     position: relative;
@@ -76,6 +76,8 @@
     overflow: hidden;
 }
 
+
+
 .profile-link::before {
     content: '';
     position: absolute;
@@ -117,7 +119,6 @@
 @media (max-width: 768px) {
     .profile-card {
         padding: 2rem;
-        margin: 1rem;
         border-radius: 20px;
     }
 

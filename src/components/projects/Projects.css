@@ -4,11 +4,11 @@
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    padding: 2rem 2rem 4rem;
+    padding: 2rem 0;
     background: transparent;
     margin: 0 auto;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1300px;
 }
 
 .projects-title {
@@ -159,11 +159,6 @@
 }
 
 @media (max-width: 768px) {
-    .projects-container {
-        padding: 1rem;
-        padding-bottom: 3rem;
-        max-width: 350px;
-    }
 
     .projects-title {
         font-size: 2rem;

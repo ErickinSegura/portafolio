@@ -9,7 +9,6 @@ const Home = () => {
     return (
         <div>
             <Profile/>
-            <Projects/>
             <TechStack/>
         </div>
     );
