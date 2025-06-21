@@ -67,6 +67,8 @@ const TechStack = () => {
     const [activeTab, setActiveTab] = useState('frontend');
     const [isTransitioning, setIsTransitioning] = useState(false);
 
+
+
     const handleTabChange = (newTab) => {
         if (newTab !== activeTab) {
             setIsTransitioning(true);
@@ -126,7 +128,7 @@ const TechStack = () => {
                             <div className={`rotating-box ${isTransitioning ? 'pulse-animation' : ''}`}>
                                 <ul className="rotation-list">
                                     {TechStacks[activeTab].elements.map((tech, index) => (
-                                        <li key={`${activeTab}-${index}`} className={`list-item item-${index + 1} ${isTransitioning ? 'item-fade-in' : ''}`} style={{ animationDelay: `${index * 0.15}s` }}>
+                                        <li key={`${activeTab}-${index}`} className={`list-item item-${index + 1} ${isTransitioning ? 'dramatic-fade-in' : ''}`}>
                                             <span>
                                                 <div className="tech-content">
                                                     <div className="tech-icon">{tech.icon}</div>
