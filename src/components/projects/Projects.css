@@ -38,7 +38,7 @@
 
 .projects-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 3.5rem;
     width: 100%;
 }
@@ -49,11 +49,16 @@
     justify-content: space-between;
     align-items: stretch;
     height: 100%;
-    padding: 1rem;
     border-radius: var(--border-radius-large);
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
+}
+
+.project-content{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
 }
 
 .project-image {
@@ -152,11 +157,6 @@
     font-size: 1.2rem;
 }
 
-@media (max-width: 1024px) {
-    .projects-grid {
-        gap: 2rem;
-    }
-}
 
 @media (max-width: 768px) {
 
@@ -198,8 +198,3 @@
     }
 }
 
-@media (min-width: 1025px) {
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}

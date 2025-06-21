@@ -90,10 +90,11 @@ const Projects = () => {
             <div className="projects-grid">
                 {projectsData.map((project, index) => (
                     <div className="project-card glass-primary glass-shine-top glass-shine-left" key={index}>
-                        {project.imageUrl && (
-                            <img src={project.imageUrl} alt={t(project.titleKey)} className="project-image" />
-                        )}
+
                         <div className="project-content">
+                            {project.imageUrl && (
+                                <img src={project.imageUrl} alt={t(project.titleKey)} className="project-image" />
+                            )}
                             <h3 className="project-title glass-secondary glass-shine-top">{t(project.titleKey)}</h3>
                             <p className="project-description glass-secondary glass-shine-top">{t(project.descriptionKey)}</p>
                             <div className="project-techstack">
