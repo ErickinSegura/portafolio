@@ -143,7 +143,7 @@ const Navbar = () => {
                             <button
                                 className="language-toggle mobile"
                                 onClick={toggleLanguage}
-                                aria-label={`Cambiar a ${i18n.language === 'es' ? 'inglés' : 'español'}`}
+                                aria-label={`${i18n.language === 'es' ? 'inglés' : 'español'}`}
                             >
                                 <span className="flag-icon" aria-hidden="true">
                                     {i18n.language === 'es' ? '🇬🇧' : '🇲🇽'}
@@ -165,8 +165,8 @@ const Navbar = () => {
                             <button
                                 className="language-toggle desktop"
                                 onClick={toggleLanguage}
-                                aria-label={`Cambiar a ${i18n.language === 'es' ? 'inglés' : 'español'}`}
-                                title={`Cambiar a ${i18n.language === 'es' ? 'English' : 'Español'}`}
+                                aria-label={`${i18n.language === 'es' ? 'inglés' : 'español'}`}
+                                title={`${i18n.language === 'es' ? 'English' : 'Español'}`}
                             >
                         <span className="flag-icon" aria-hidden="true">
                             {i18n.language === 'es' ? '🇬🇧' : '🇲🇽'}
