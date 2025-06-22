@@ -10,17 +10,15 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
 }
 
 :root {
-  /* Colores base */
   --primary-dark: #1f1b36;
   --accent-color: #d8b9ff;
   --text-primary: rgba(255, 255, 255, 0.95);
   --text-secondary: rgba(255, 255, 255, 0.85);
 
-  /* Efectos glassmorphism */
   --glass-bg-primary: linear-gradient(135deg,
   rgba(31, 27, 54, 0.25),
   rgba(31, 27, 54, 0.15),
@@ -35,18 +33,17 @@ code {
   rgba(255, 255, 255, 0.03)
   );
 
-  /* Blur y filtros */
+  
+
   --blur-strong: blur(10px);
   --blur-medium: blur(15px);
   --blur-subtle: blur(10px);
 
-  /* Bordes glassmorphism */
   --glass-border: 1px solid rgba(31, 27, 54, 0.2);
   --glass-border-light: 1px solid rgba(255, 255, 255, 0.1);
   --glass-border-top: 1px solid rgba(255, 255, 255, 0.15);
   --glass-border-left: 1px solid rgba(255, 255, 255, 0.1);
 
-  /* Sombras glassmorphism */
   --glass-shadow-primary:
           0 0 8px rgba(216, 185, 255, 0.03),
           0 2px 8px rgba(0, 0, 0, 0.08),
@@ -57,18 +54,15 @@ code {
           0 1px 4px rgba(0, 0, 0, 0.05),
           inset 0 1px 0 rgba(255, 255, 255, 0.03);
 
-  /* Transiciones */
   --transition-smooth: all 0.3s ease;
   --transition-bounce: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Dimensiones */
   --header-height: 70px;
   --border-radius-large: 24px;
   --border-radius-medium: 12px;
   --border-radius-small: 8px;
 }
 
-/* ===== CLASES GLASSMORPHISM REUTILIZABLES ===== */
 
 .glass-primary {
   background: var(--glass-bg-primary);
@@ -78,7 +72,6 @@ code {
   border-top: var(--glass-border-top);
   border-left: var(--glass-border-left);
   box-shadow: var(--glass-shadow-primary);
-
 }
 
 .glass-secondary {
@@ -113,7 +106,6 @@ code {
   box-shadow: var(--glass-shadow-secondary);
 }
 
-/* Efectos decorativos glassmorphism */
 .glass-shine-top::before {
   content: '';
   position: absolute;
@@ -132,4 +124,29 @@ code {
   width: 1px;
   bottom: 0;
   background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+@media (max-width: 768px), (hover: none), (pointer: coarse) {
+
+  .glass-primary {
+    background: var(--glass-bg-primary);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .glass-secondary {
+    background: var(--glass-bg-secondary);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .glass-subtle {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .glass-hover-effect:hover,
+  .glass-hover-effect:active {
+    transform: none;
+  }
 }

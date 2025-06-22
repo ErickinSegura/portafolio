@@ -71,7 +71,6 @@
 .project-content {
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
     flex-grow: 1;
 }
 
