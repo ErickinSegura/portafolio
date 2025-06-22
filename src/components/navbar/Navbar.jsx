@@ -8,18 +8,23 @@ const Navbar = () => {
     const [isMenuActive, setIsMenuActive] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+    const closeMenu = useCallback(() => {
+        setIsMenuActive(false);
+        document.body.classList.remove('menu-open');
+    }, []);
+
     const toggleLanguage = useCallback(() => {
         const newLang = i18n.language === 'es' ? 'en' : 'es';
         i18n.changeLanguage(newLang)
             .then(() => {
                 if (isMobile) {
-                    setIsMenuActive(false);
+                    closeMenu();
                 }
             })
             .catch((error) => {
                 console.error("Error changing language:", error);
             });
-    }, [i18n, isMobile]);
+    }, [i18n, isMobile, closeMenu]);
 
     const toggleMenu = useCallback(() => {
         setIsMenuActive(prev => {
@@ -27,11 +32,6 @@ const Navbar = () => {
             document.body.classList.toggle('menu-open', newState);
             return newState;
         });
-    }, []);
-
-    const closeMenu = useCallback(() => {
-        setIsMenuActive(false);
-        document.body.classList.remove('menu-open');
     }, []);
 
     useEffect(() => {
@@ -137,7 +137,6 @@ const Navbar = () => {
                         </NavLink>
                     </li>
 
-                    {/* Botón de idioma en menú móvil */}
                     {isMobile && isMenuActive && (
                         <li className="nav-item language-item">
                             <button
@@ -156,12 +155,9 @@ const Navbar = () => {
                     )}
                 </ul>
 
-
                 {!isMobile &&
                     <>
-                        {/* Acciones de la navbar (tercera columna en grid) */}
                         <div className="navbar-actions">
-                            {/* Botón de idioma desktop */}
                             <button
                                 className="language-toggle desktop"
                                 onClick={toggleLanguage}
@@ -176,7 +172,6 @@ const Navbar = () => {
                     </>
                 }
 
-                {/* Overlay para cerrar menú en móvil */}
                 {isMenuActive && isMobile && (
                     <div
                         className={`menu-overlay ${isMenuActive ? 'active' : ''}`}

@@ -63,7 +63,7 @@ const TechStacks = {
 };
 
 const TechStack = () => {
-    const { t, i18n } = useTranslation();
+    const { t} = useTranslation();
     const [activeTab, setActiveTab] = useState('frontend');
     const [isTransitioning, setIsTransitioning] = useState(false);
 
