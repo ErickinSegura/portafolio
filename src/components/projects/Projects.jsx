@@ -99,7 +99,7 @@ const Projects = () => {
                             <p className="project-description glass-secondary glass-shine-top">{t(project.descriptionKey)}</p>
                             <div className="project-techstack">
                                 {project.techStack.map((tech, idx) => (
-                                    <div className="tech-item glass-subtle" key={idx}>
+                                    <div className="tech-item" key={idx}>
                                         <span className="tech-icon">{tech.icon}</span>
                                         <span className="tech-name">{tech.name}</span>
                                     </div>
@@ -113,6 +113,7 @@ const Projects = () => {
                                     className="project-button glass-subtle glass-hover-effect"
                                 >
                                     <FaGithub className="button-icon" /> {t('Repo')}
+                                    <span className="link-underline"></span>
                                 </a>
 
                                 {project.demo &&
@@ -123,6 +124,7 @@ const Projects = () => {
                                         className="project-button glass-subtle glass-hover-effect"
                                     >
                                         <FaYoutube className="button-icon" /> {t('Demo')}
+                                        <span className="link-underline"></span>
                                     </a>
                                 }
                             </div>

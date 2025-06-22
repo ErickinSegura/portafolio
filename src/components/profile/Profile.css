@@ -9,7 +9,7 @@
 .profile-card {
     border-radius: var(--border-radius-large);
     padding: 2.5rem;
-    max-width: 500px;
+    max-width: 380px;
     width: 100%;
     transition: var(--transition-smooth);
     position: relative;
