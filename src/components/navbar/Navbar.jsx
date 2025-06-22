@@ -8,12 +8,10 @@ const Navbar = () => {
     const [isMenuActive, setIsMenuActive] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-    // Optimizar el toggle de idioma
     const toggleLanguage = useCallback(() => {
         const newLang = i18n.language === 'es' ? 'en' : 'es';
         i18n.changeLanguage(newLang)
             .then(() => {
-                // Solo cerrar menú si está en móvil
                 if (isMobile) {
                     setIsMenuActive(false);
                 }
@@ -23,35 +21,29 @@ const Navbar = () => {
             });
     }, [i18n, isMobile]);
 
-    // Optimizar el toggle del menú
     const toggleMenu = useCallback(() => {
         setIsMenuActive(prev => {
             const newState = !prev;
-            // Prevenir scroll del body cuando el menú está abierto
             document.body.classList.toggle('menu-open', newState);
             return newState;
         });
     }, []);
 
-    // Cerrar menú
     const closeMenu = useCallback(() => {
         setIsMenuActive(false);
         document.body.classList.remove('menu-open');
     }, []);
 
-    // Manejar cambios de tamaño de ventana
     useEffect(() => {
         const handleResize = () => {
             const mobile = window.innerWidth <= 768;
             setIsMobile(mobile);
 
-            // Si cambiamos a desktop, cerrar el menú móvil
             if (!mobile && isMenuActive) {
                 closeMenu();
             }
         };
 
-        // Debounce para optimizar rendimiento
         let timeoutId;
         const debouncedHandleResize = () => {
             clearTimeout(timeoutId);
@@ -65,12 +57,10 @@ const Navbar = () => {
         };
     }, [isMenuActive, closeMenu]);
 
-    // Cerrar menú al hacer clic fuera
     useEffect(() => {
         if (!isMenuActive) return;
 
         const handleClickOutside = (event) => {
-            // Solo en móvil y si el menú está activo
             if (isMobile && !event.target.closest('.navbar-container')) {
                 closeMenu();
             }
@@ -91,7 +81,6 @@ const Navbar = () => {
         };
     }, [isMenuActive, isMobile, closeMenu]);
 
-    // Limpiar al desmontar el componente
     useEffect(() => {
         return () => {
             document.body.classList.remove('menu-open');
@@ -101,7 +90,6 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-container">
-                {/* Área de marca/logo (primera columna en grid) */}
                 <div className="navbar-brand">
                     {isMobile && (
                         <button
@@ -118,7 +106,6 @@ const Navbar = () => {
                     )}
                 </div>
 
-                {/* Menu principal (segunda columna en grid) */}
                 <ul
                     id="main-navigation"
                     className={`nav-menu ${isMenuActive ? 'active' : ''}`}
@@ -140,13 +127,13 @@ const Navbar = () => {
 
                     <li className="nav-item">
                         <NavLink
-                            to="/techstack"
+                            to="/blog"
                             className={({ isActive }) =>
                                 `nav-links ${isActive ? 'active' : ''}`
                             }
                             onClick={closeMenu}
                         >
-                            <span>{t('Techstack')}</span>
+                            <span>{t('Blog')}</span>
                         </NavLink>
                     </li>
 

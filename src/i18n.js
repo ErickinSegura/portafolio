@@ -5,11 +5,13 @@ const resources = {
     en: {
         translation: {
             "Principal": "Main",
+            "Blog": "Blog",
             "Techstack": "Techstack",
             "Description": "Experienced student in fullstack development for multiple platforms.",
             "Projects": "Projects",
             "Repo": "Repository",
             "Demo": "Demo",
+            "Building": "Amazing things soon...",
             "projects": {
                 "rift": {
                     "name": "Rift",
@@ -55,11 +57,13 @@ const resources = {
     es: {
         translation: {
             "Principal": "Principal",
+            "Blog": "Blog",
             "Techstack": "Tecnologías",
             "Description": "Estudiante con experiencia en el desarrollo fullstack para multiples plataformas.",
             "Projects": "Proyectos",
             "Repo": "Repositorio",
             "Demo": "Demo",
+            "Building": "Cosas impresionantes proximamente...",
             "projects": {
                 "rift": {
                     "name": "Rift",
