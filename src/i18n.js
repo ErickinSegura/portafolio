@@ -6,9 +6,9 @@ const resources = {
         translation: {
             "Principal": "Main",
             "Blog": "Blog",
-            "Techstack": "Techstack",
+            "Techstack": "My Techstack",
             "Description": "Experienced student in fullstack development for multiple platforms.",
-            "Projects": "Projects",
+            "Projects": "My Projects",
             "Repo": "Repository",
             "Demo": "Demo",
             "Building": "Amazing things soon...",
@@ -58,9 +58,9 @@ const resources = {
         translation: {
             "Principal": "Principal",
             "Blog": "Blog",
-            "Techstack": "Tecnologías",
+            "Techstack": "Mis Tecnologías",
             "Description": "Estudiante con experiencia en el desarrollo fullstack para multiples plataformas.",
-            "Projects": "Proyectos",
+            "Projects": "Mis Proyectos",
             "Repo": "Repositorio",
             "Demo": "Demo",
             "Building": "Cosas impresionantes proximamente...",
