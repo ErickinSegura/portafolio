@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub } from 'react-icons/fa';
+import {FaGithub, FaYoutube} from 'react-icons/fa';
 import {
     SiKotlin,
     SiSupabase,
@@ -10,12 +10,28 @@ import {
     SiFirebase,
     SiFlask,
     SiOpenai,
-    SiHtml5
+    SiHtml5, SiOracle, SiTelegram, SiDocker, SiKubernetes, SiPostgresql, SiDotnet, SiCss3
 } from 'react-icons/si';
 import { useTranslation } from 'react-i18next';
 import './Projects.css';
+import {TbBrandCSharp} from "react-icons/tb";
 
 const projectsData = [
+    {
+        titleKey: "projects.rift.name",
+        descriptionKey: "projects.rift.description",
+        imageUrl: "./images/projects/rift.png",
+        repoLink: "https://github.com/ErickinSegura/AREL",
+        demo: "https://youtu.be/Nq5pGb4illA",
+        techStack: [
+            { name: "React", icon: <SiReact /> },
+            { name: "Oracle Cloud", icon: <SiOracle /> },
+            { name: "TailwindCSS", icon: <SiTailwindcss /> },
+            { name: "Docker", icon: <SiDocker /> },
+            { name: "Kubernetes", icon: <SiKubernetes /> },
+            { name: "Telegram", icon: <SiTelegram /> },
+        ]
+    },
     {
         titleKey: "projects.juraid.name",
         descriptionKey: "projects.juraid.description",
@@ -23,7 +39,9 @@ const projectsData = [
         repoLink: "https://github.com/ErickinSegura/SECAL-SACV",
         techStack: [
             { name: "Kotlin", icon: <SiKotlin /> },
-            { name: "Supabase", icon: <SiSupabase /> }
+            { name: "Supabase", icon: <SiSupabase /> },
+            { name: "Postgresql", icon: <SiPostgresql /> },
+            { name: "Firebase", icon: <SiFirebase /> },
         ]
     },
     {
@@ -33,7 +51,9 @@ const projectsData = [
         repoLink: "https://github.com/ErickinSegura/Zucaritas-TM",
         techStack: [
             { name: "Unity", icon: <SiUnity /> },
-            { name: "MySQL", icon: <SiMysql /> }
+            { name: ".NET", icon: <SiDotnet /> },
+            { name: "C#", icon: <TbBrandCSharp /> },
+            { name: "MySQL", icon: <SiMysql /> },
         ]
     },
     {
@@ -52,10 +72,12 @@ const projectsData = [
         descriptionKey: "projects.lux.description",
         imageUrl: "./images/projects/hack.png",
         repoLink: "https://github.com/ErickinSegura/HackMTY-2024",
+        demo: "https://youtu.be/6NaPx4mW-GY",
         techStack: [
             { name: "Flask", icon: <SiFlask /> },
             { name: "OpenAI", icon: <SiOpenai /> },
-            { name: "HTML", icon: <SiHtml5 /> }
+            { name: "HTML", icon: <SiHtml5 /> },
+            { name: "CSS", icon: <SiCss3 /> },
         ]
     }
 ];
@@ -65,19 +87,20 @@ const Projects = () => {
 
     return (
         <div className="projects-container">
-            <h2 className="projects-title">{t('Projects')}</h2>
+            <h2 className="projects-title glass-primary glass-shine-top">{t('Projects')}</h2>
             <div className="projects-grid">
                 {projectsData.map((project, index) => (
-                    <div className="project-card" key={index}>
-                        {project.imageUrl && (
-                            <img src={project.imageUrl} alt={t(project.titleKey)} className="project-image" />
-                        )}
+                    <div className="project-card glass-primary glass-shine-top glass-shine-left" key={index}>
+
                         <div className="project-content">
-                            <h3 className="project-title">{t(project.titleKey)}</h3>
-                            <p className="project-description">{t(project.descriptionKey)}</p>
+                            {project.imageUrl && (
+                                <img src={project.imageUrl} alt={t(project.titleKey)} className="project-image" />
+                            )}
+                            <h3 className="project-title glass-secondary glass-shine-top">{t(project.titleKey)}</h3>
+                            <p className="project-description glass-secondary glass-shine-top">{t(project.descriptionKey)}</p>
                             <div className="project-techstack">
                                 {project.techStack.map((tech, idx) => (
-                                    <div className="tech-item" key={idx}>
+                                    <div className="tech-item glass-secondary" key={idx}>
                                         <span className="tech-icon">{tech.icon}</span>
                                         <span className="tech-name">{tech.name}</span>
                                     </div>
@@ -88,10 +111,23 @@ const Projects = () => {
                                     href={project.repoLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="project-button"
+                                    className="project-button glass-subtle glass-hover-effect"
                                 >
                                     <FaGithub className="button-icon" /> {t('Repo')}
+                                    <span className="link-underline"></span>
                                 </a>
+
+                                {project.demo &&
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="project-button glass-subtle glass-hover-effect"
+                                    >
+                                        <FaYoutube className="button-icon" /> {t('Demo')}
+                                        <span className="link-underline"></span>
+                                    </a>
+                                }
                             </div>
                         </div>
                     </div>

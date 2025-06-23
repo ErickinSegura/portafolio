@@ -5,11 +5,18 @@ const resources = {
     en: {
         translation: {
             "Principal": "Main",
-            "Techstack": "Techstack",
+            "Blog": "Blog",
+            "Techstack": "My Techstack",
             "Description": "Experienced student in fullstack development for multiple platforms.",
-            "Projects": "Projects",
-            "Repo": "Repo",
+            "Projects": "My Projects",
+            "Repo": "Repository",
+            "Demo": "Demo",
+            "Building": "Amazing things soon...",
             "projects": {
+                "rift": {
+                    "name": "Rift",
+                    "description": "A multiplatform tool (Web and Telegram Bot) for managing projects based on agile methodologies, including progress tracking and report generation with charts."
+                },
                 "juraid": {
                     "name": "JurAid",
                     "description": "Android application that allows users to address legal issues efficiently and securely. With a minimalist and professional interface."
@@ -26,17 +33,42 @@ const resources = {
                     "name": "Lux (HackMTY2024)",
                     "description": "Service with a web platform designed for SMEs, providing business owners with tools to analyze, report, and generate ideas using natural language."
                 }
+            },
+            "technology":  {
+                "frontend" :{
+                    "name": "Frontend",
+                    "description": "Frontend Technologies",
+                },
+                "backend": {
+                    "name": "Backend",
+                    "description": "Backend Technologies",
+                },
+                "database": {
+                    "name": "Database",
+                    "description": "Database Technologies",
+                },
+                "extra": {
+                    "name": "Extras",
+                    "description": "Extra Technologies",
+                }
             }
         }
     },
     es: {
         translation: {
             "Principal": "Principal",
-            "Techstack": "Techstack",
+            "Blog": "Blog",
+            "Techstack": "Mis Tecnologías",
             "Description": "Estudiante con experiencia en el desarrollo fullstack para multiples plataformas.",
-            "Projects": "Proyectos",
+            "Projects": "Mis Proyectos",
             "Repo": "Repositorio",
+            "Demo": "Demo",
+            "Building": "Cosas impresionantes proximamente...",
             "projects": {
+                "rift": {
+                    "name": "Rift",
+                    "description": "Una herramienta multiplataforma (Web y Bot de Telegram) que sirve para gestionar proyectos basados en metdologías ágiles, con medición de progresos y generación de reportes con gráficas"
+                },
                 "juraid": {
                     "name": "JurAid",
                     "description": "Aplicación Android que permite a los usuarios abordar procesos problemas legales de manera eficiente y segura. Con una interfaz minimalista y profesional"
@@ -52,6 +84,24 @@ const resources = {
                 "lux": {
                     "name": "Lux (HackMTY2024)",
                     "description": "Servicio con plataforma web diseñada para PYMES que provee a dueños de negocios herramientas para analizar, reportar y generar ideas usando lenguaje natural"
+                }
+            },
+            "technology":  {
+                "frontend" :{
+                    "name": "Frontend",
+                    "description": "Tecnologías de Frontend",
+                },
+                "backend": {
+                    "name": "Backend",
+                    "description": "Tecnologías de Backend",
+                },
+                "database": {
+                    "name": "Base de Datos",
+                    "description": "Tecnologías de Bases de Datos",
+                },
+                "extra": {
+                    "name": "Extras",
+                    "description": "Tecnologías Extra",
                 }
             }
         }

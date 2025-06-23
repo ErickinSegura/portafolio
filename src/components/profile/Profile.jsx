@@ -22,7 +22,7 @@ const Profile = () => {
 
     return (
         <div className="profile-container">
-            <div className="profile-card">
+            <div className="profile-card glass-primary glass-shine-top glass-shine-left">
                 <div className="profile-content">
                     <h1 className="profile-name">Erick Segura Sánchez</h1>
                     <p className="profile-title">{t('Description')}</p>
@@ -32,7 +32,7 @@ const Profile = () => {
                             href="https://github.com/ErickinSegura"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="profile-link"
+                            className="profile-link glass-subtle glass-hover-effect"
                         >
                             <FaGithub className="link-icon" />
                             <span>GitHub</span>
@@ -40,23 +40,9 @@ const Profile = () => {
                         </a>
                         <button
                             onClick={handleCVDownload}
-                            className="profile-link"
+                            className="profile-link glass-subtle glass-hover-effect"
                             style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '1rem',
-                                padding: '1rem 1.5rem',
-                                color: 'rgba(255, 255, 255, 0.9)',
-                                textDecoration: 'none',
-                                borderRadius: '10px',
-                                transition: 'all 0.3s ease',
-                                position: 'relative',
-                                overflow: 'hidden',
-                                background: 'rgba(255, 255, 255, 0.03)',
-                                border: 'none',
-                                cursor: 'pointer',
-                                width: '100%',
-                                textAlign: 'left'
+                                cursor: 'pointer'
                             }}
                         >
                             <FaFilePdf className="link-icon" />
@@ -67,7 +53,7 @@ const Profile = () => {
                             href="mailto:erickseguraog@gmail.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="profile-link"
+                            className="profile-link glass-subtle glass-hover-effect"
                         >
                             <FaEnvelope className="link-icon" />
                             <span>Email</span>
