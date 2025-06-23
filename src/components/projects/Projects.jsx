@@ -22,7 +22,7 @@ const projectsData = [
         descriptionKey: "projects.rift.description",
         imageUrl: "./images/projects/rift.png",
         repoLink: "https://github.com/ErickinSegura/AREL",
-        demo: "https://youtu.be/L8O_YEM0nLs",
+        demo: "https://youtu.be/Nq5pGb4illA",
         techStack: [
             { name: "React", icon: <SiReact /> },
             { name: "Oracle Cloud", icon: <SiOracle /> },
@@ -72,6 +72,7 @@ const projectsData = [
         descriptionKey: "projects.lux.description",
         imageUrl: "./images/projects/hack.png",
         repoLink: "https://github.com/ErickinSegura/HackMTY-2024",
+        demo: "https://youtu.be/6NaPx4mW-GY",
         techStack: [
             { name: "Flask", icon: <SiFlask /> },
             { name: "OpenAI", icon: <SiOpenai /> },
