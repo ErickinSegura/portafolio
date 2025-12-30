@@ -14,6 +14,13 @@
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.005);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .profile-content {
@@ -74,9 +81,19 @@
     border-radius: var(--border-radius-medium);
     position: relative;
     overflow: hidden;
+    background: rgba(255, 255, 255, 0.003);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
-
+.profile-link:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
 
 .profile-link::before {
     content: '';
