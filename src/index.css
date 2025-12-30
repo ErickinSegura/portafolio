@@ -65,6 +65,16 @@ code {
   --border-radius-small: 8px;
 }
 
+.glass {
+    background: rgba(255, 255, 255, 0.005);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
 .glass-primary {
   background: var(--glass-bg-primary);
   backdrop-filter: var(--blur-strong);

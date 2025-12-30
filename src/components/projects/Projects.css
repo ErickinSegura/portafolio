@@ -54,13 +54,6 @@
     transition: var(--transition-smooth);
     position: relative;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.005);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 
-        0 8px 32px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.18);
 }
 
 .project-content{
@@ -92,7 +85,6 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .project-title::after {
@@ -172,6 +164,11 @@
     border-radius: var(--border-radius-medium);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.003);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
 

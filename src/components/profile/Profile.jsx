@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaGithub, FaFilePdf, FaEnvelope } from 'react-icons/fa';
 import './Profile.css';
+import '../../index.css'
 import { useTranslation } from 'react-i18next';
 
 const Profile = () => {
@@ -22,7 +23,7 @@ const Profile = () => {
 
     return (
         <div className="profile-container">
-            <div className="profile-card glass-primary glass-shine-top glass-shine-left">
+            <div className="profile-card glass">
                 <div className="profile-content">
                     <h1 className="profile-name">Erick Segura Sánchez</h1>
                     <p className="profile-title">{t('Description')}</p>
@@ -32,7 +33,7 @@ const Profile = () => {
                             href="https://github.com/ErickinSegura"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="profile-link glass-subtle glass-hover-effect"
+                            className="profile-link glass-subtle glass"
                         >
                             <FaGithub className="link-icon" />
                             <span>GitHub</span>
@@ -40,7 +41,7 @@ const Profile = () => {
                         </a>
                         <button
                             onClick={handleCVDownload}
-                            className="profile-link glass-subtle glass-hover-effect"
+                            className="profile-link glass-subtle glass"
                             style={{
                                 cursor: 'pointer'
                             }}
@@ -53,7 +54,7 @@ const Profile = () => {
                             href="mailto:erickseguraog@gmail.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="profile-link glass-subtle glass-hover-effect"
+                            className="profile-link glass-subtle glass"
                         >
                             <FaEnvelope className="link-icon" />
                             <span>Email</span>
