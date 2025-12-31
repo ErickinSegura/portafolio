@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import './Navbar.css';
+import '../../index.css'
 
 const Navbar = () => {
     const { t, i18n } = useTranslation();
@@ -117,7 +118,7 @@ const Navbar = () => {
                             to="/"
                             end
                             className={({ isActive }) =>
-                                `nav-links ${isActive ? 'active' : ''}`
+                                `nav-links glass ${isActive ? 'active' : ''}`
                             }
                             onClick={closeMenu}
                         >
@@ -129,7 +130,7 @@ const Navbar = () => {
                         <NavLink
                             to="/blog"
                             className={({ isActive }) =>
-                                `nav-links ${isActive ? 'active' : ''}`
+                                `nav-links glass ${isActive ? 'active' : ''}`
                             }
                             onClick={closeMenu}
                         >

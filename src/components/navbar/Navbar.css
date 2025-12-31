@@ -6,10 +6,14 @@
     height: var(--header-height, 70px);
     padding: 0 clamp(1rem, 4vw, 50rem) 0;
     box-sizing: border-box;
-    background: var(--glass-bg-secondary);
-    backdrop-filter: var(--blur-medium);
-    -webkit-backdrop-filter: var(--blur-medium);
-    border-bottom: var(--glass-border);
+        background: rgba(255, 255, 255, 0.005);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
 }
 
 .navbar-container {
@@ -63,10 +67,6 @@
     font-weight: 500;
     white-space: nowrap;
     transition: var(--transition-smooth);
-    background: var(--glass-bg-subtle);
-    backdrop-filter: var(--blur-subtle);
-    -webkit-backdrop-filter: var(--blur-subtle);
-    border: var(--glass-border-light);
     width: 100px;
     min-width: 100px;
 }
@@ -213,9 +213,6 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(31, 27, 54, 0.55);
-    backdrop-filter: var(--blur-medium);
-    -webkit-backdrop-filter: var(--blur-medium);
     z-index: 998;
     opacity: 0;
     visibility: hidden;
@@ -274,20 +271,22 @@
         height: 100vh;
         flex-direction: column;
         gap: 0;
-        /* Efecto glassmorphism potente para el menú móvil */
-        background: rgba(31, 27, 54, 0.95);
-        backdrop-filter: var(--blur-strong) var(--glass-filters);
-        -webkit-backdrop-filter: var(--blur-strong) var(--glass-filters);
-        border: var(--glass-border);
-        border-top: var(--glass-border-top);
-        border-left: var(--glass-border-left);
-        box-shadow: var(--glass-shadow-primary);
+        /* Fondo semi-transparente REQUERIDO para backdrop-filter en Safari */
+        background: rgba(20, 20, 30, 0.85);
+        /* Blur fuerte */
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        /* Forzar aceleración GPU para Safari */
+        transform: translateX(-100%) translateZ(0);
+        will-change: transform;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
         padding: calc(var(--header-height, 70px) + 2rem) 2rem 2rem;
         z-index: 999;
-        transform: translateX(-100%);
         transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         margin: 0;
-        border-right: 1px solid rgba(255, 255, 255, 0.1);
         overflow-y: auto;
         justify-self: stretch;
         grid-column: 1 / -1;
@@ -295,7 +294,7 @@
     }
 
     .nav-menu.active {
-        transform: translateX(0);
+        transform: translateX(0) translateZ(0);
     }
 
     .nav-item {
@@ -458,11 +457,5 @@ body.menu-open {
         .hamburger:hover {
             transform: none;
         }
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-menu::before {
-        display: block;
     }
 }
