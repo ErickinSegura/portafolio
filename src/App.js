@@ -1,4 +1,4 @@
-import React from 'react';
+import { Analytics } from "@vercel/analytics/react"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import StarryBackground from './components/background/StarryBackground';
 import Navbar from './components/navbar/Navbar';
@@ -9,16 +9,18 @@ import './App.css';
 
 const App = () => {
     return (
-        <Router>
-            <StarryBackground />
-            <div className="app-content">
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/blog" element={<Blog />} />
-                </Routes>
-            </div>
-        </Router>
+        <Analytics>
+            <Router>
+                <StarryBackground />
+                <div className="app-content">
+                    <Navbar />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/blog" element={<Blog />} />
+                    </Routes>
+                </div>
+            </Router>
+        </Analytics>
     );
 };
 
