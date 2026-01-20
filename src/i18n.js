@@ -51,7 +51,17 @@ const resources = {
                     "name": "Extras",
                     "description": "Extra Technologies",
                 }
+            },
+            "Experience": "Experiencie",
+            "experiencies": {
+                "oracle":{
+                    "company": "Oracle",
+                    "position": "Software Engeenieer Intern",
+                    "period": "July 2025 - Present",
+                    "description": "bla bla bla"
+                }
             }
+
         }
     },
     es: {
@@ -102,6 +112,15 @@ const resources = {
                 "extra": {
                     "name": "Extras",
                     "description": "Tecnologías Extra",
+                }
+            },
+            "Experience": "Experiencia",
+            "experiencies": {
+                "oracle":{
+                    "company": "Oracle",
+                    "position": "Software Engeenieer Intern",
+                    "period": "Julio 2025 - Presente",
+                    "description": "bla bla bla"
                 }
             }
         }

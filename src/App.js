@@ -9,7 +9,6 @@ import './App.css';
 
 const App = () => {
     return (
-        <Analytics>
             <Router>
                 <StarryBackground />
                 <div className="app-content">
@@ -20,7 +19,6 @@ const App = () => {
                     </Routes>
                 </div>
             </Router>
-        </Analytics>
     );
 };
 
