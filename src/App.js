@@ -9,18 +9,17 @@ import './App.css';
 
 const App = () => {
     return (
-        <Analytics>
-            <Router>
-                <StarryBackground />
-                <div className="app-content">
-                    <Navbar />
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/blog" element={<Blog />} />
-                    </Routes>
-                </div>
-            </Router>
-        </Analytics>
+        <Router>
+            <StarryBackground />
+            <div className="app-content">
+                <Navbar />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/blog" element={<Blog />} />
+                </Routes>
+            </div>
+            <Analytics />
+        </Router>
     );
 };
 
