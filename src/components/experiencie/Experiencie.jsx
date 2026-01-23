@@ -39,9 +39,12 @@ const Experiencie = () => {
                 </p>
               </div>
 
-              <p className="experience-description glass glass-subtle glass-shine-top">
-                {t(`experiencies.${experience.translationKey}.description`)}
-              </p>
+              <p 
+                className="experience-description glass glass-subtle glass-shine-top"
+                dangerouslySetInnerHTML={{ 
+                  __html: t(`experiencies.${experience.translationKey}.description`) 
+                }}
+              />
             </div>
           </div>
         ))}

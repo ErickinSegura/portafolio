@@ -55,10 +55,10 @@ const resources = {
             "Experience": "Experiencie",
             "experiencies": {
                 "oracle":{
-                    "company": "Oracle",
+                    "company": "Oracle (Guadalajara, Jalisco, México)",
                     "position": "Software Engeenieer Intern",
                     "period": "July 2025 - Present",
-                    "description": "bla bla bla"
+                    "description": "I develop enterprise applications using Oracle APEX for ACE (Application Center of Excellence) team projects. This experience allows me to significantly strengthen my advanced SQL skills (complex queries, query optimization) and gain practical experience in real project management and solution development for enterprise environments.<br/><br/><strong>Skills:</strong> Oracle APEX, Advanced SQL, Oracle Database, Project Management."
                 }
             }
 
@@ -117,10 +117,10 @@ const resources = {
             "Experience": "Experiencia",
             "experiencies": {
                 "oracle":{
-                    "company": "Oracle",
+                    "company": "Oracle (Guadalajara, Jalisco, México)",
                     "position": "Software Engeenieer Intern",
                     "period": "Julio 2025 - Presente",
-                    "description": "bla bla bla"
+                    "description": "Desarrollo aplicaciones empresariales con Oracle APEX para proyectos del equipo de ACE (Application Center of Excellence). Esta experiencia me permite fortalecer significativamente mis habilidades en SQL avanzado(consultas complejas, optimización de queries) y adquirir experiencia práctica en gestión de proyectos reales y desarrollo de soluciones para entornos empresariales.<br/><br/><strong>Competencias:</strong> Oracle APEX, SQL avanzado, Oracle Database, gestión de proyectos."
                 }
             }
         }

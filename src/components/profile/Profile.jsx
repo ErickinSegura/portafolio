@@ -10,8 +10,8 @@ const Profile = () => {
     const handleCVDownload = () => {
         const cvFileName = i18n.language === 'es' ? 'Español.pdf' : 'English.pdf';
         const displayName = i18n.language === 'es'
-            ? 'CV Erick Segura Sánchez.pdf'
-            : 'Resume Erick Segura Sánchez.pdf';
+            ? 'Erick Segura Sánchez CV.pdf'
+            : 'Erick Segura Sánchez Resume.pdf';
 
         const link = document.createElement('a');
         link.href = `/${cvFileName}`;
