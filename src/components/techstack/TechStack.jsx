@@ -85,18 +85,18 @@ const TechStack = () => {
         <div className="tech-stack-container">
             {/* Título centrado */}
             <div className="title-section">
-                <h2 className="tech-title glass-primary glass-shine-top">{t('Techstack')}</h2>
+                <h2 className="tech-title glass glass-shine-top">{t('Techstack')}</h2>
             </div>
 
             <div className="main-content">
                 {/* Tabs a la izquierda */}
                 <div className="tabs-section">
-                    <div className="tabs-container glass-primary glass-shine-top glass-shine-left">
+                    <div className="tabs-container glass glass-shine-top glass-shine-left">
                         <div className="tabs-wrapper">
                             {Object.keys(TechStacks).map((key) => (
                                 <button
                                     key={key}
-                                    className={`tab-button glass-subtle glass-hover-effect ${activeTab === key ? 'active' : ''}`}
+                                    className={`tab-button glass glass-subtle glass-hover-effect ${activeTab === key ? 'active' : ''}`}
                                     onClick={() => handleTabChange(key)}
                                 >
                                     {t(`technology.${key}.name`)}

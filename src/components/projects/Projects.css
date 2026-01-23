@@ -85,7 +85,6 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .project-title::after {
@@ -165,6 +164,11 @@
     border-radius: var(--border-radius-medium);
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.003);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
 }
 
