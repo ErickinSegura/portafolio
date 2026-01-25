@@ -17,11 +17,12 @@ import {
     SiSupabase,
     SiOracle,
     SiFigma,
-    SiPhotopea,
     SiGit,
     SiGithub,
     SiDocker,
-    SiDotnet
+    SiDotnet,
+    SiArchlinux,
+    SiDebian
 } from "react-icons/si";
 
 const TechStacks = {
@@ -55,9 +56,10 @@ const TechStacks = {
         elements: [
             {name: 'Git', icon: <SiGit />},
             {name: 'Github', icon: <SiGithub />},
+            {name: 'Arch Based Distros', icon: <SiArchlinux />},
+            {name: 'Debian Based Distros', icon: <SiDebian />},
             {name: 'Docker', icon: <SiDocker />},
             {name: 'Figma', icon: <SiFigma />},
-            {name: 'Photopea', icon: <SiPhotopea />},
         ]
     }
 };
